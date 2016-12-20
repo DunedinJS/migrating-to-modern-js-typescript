@@ -4,10 +4,14 @@ import * as Backbone from 'backbone';
 import AppModel from '../app/Model';
 import * as template from './template.html';
 
+interface TemplateData {
+  isPaused: boolean
+}
+
 // A view which manages the pause, continue, and reset buttons
 export default class ControlsView extends Backbone.View<AppModel> {
 
-  template: (data: any) => string;
+  template: (data: TemplateData) => string;
 
   constructor(options: any) {
     super(options);

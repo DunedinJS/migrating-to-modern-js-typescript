@@ -3,7 +3,7 @@ import * as Backbone from 'backbone';
 // A model which stores and manages application data
 export default class AppModel extends Backbone.Model {
 
-  getSeconds() {
+  getSeconds(): number {
     var pauseTimestamp = this.get('pauseTimestamp');
     var offset = pauseTimestamp || Date.now();
     var timestamp = offset - this.get('timestamp');
@@ -11,7 +11,7 @@ export default class AppModel extends Backbone.Model {
     return Math.floor(timestamp / 1000);
   }
 
-  isPaused() {
+  isPaused(): boolean {
     return !!this.get('pauseTimestamp');
   }
 
