@@ -7,7 +7,6 @@ interface TemplateData {
   seconds: number
 }
 
-
 // A view which displays the elapsed time in seconds
 export default class DisplayView extends Backbone.View<AppModel> {
 
