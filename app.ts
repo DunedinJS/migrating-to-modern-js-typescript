@@ -15,7 +15,7 @@ $(function() {
   // The main view for the application
   class AppView extends Backbone.View<AppModel> {
   
-    template: (data?: any) => string;
+    template: () => string;
     displayView: DisplayView;
     controlsView: ControlsView;
 
@@ -47,10 +47,14 @@ $(function() {
 
   }
 
+  interface DisplayTemplateData {
+    seconds: number
+  }
+
   // A view which displays the elapsed time in seconds
   class DisplayView extends Backbone.View<AppModel> {
 
-    template: (data: any) => string;
+    template: (data: DisplayTemplateData) => string;
 
     constructor(options: any) {
       super(options);
@@ -82,10 +86,14 @@ $(function() {
 
   }
 
+  interface ControlsTemplateData {
+    isPaused: boolean
+  }
+
   // A view which manages the pause, continue, and reset buttons
   class ControlsView extends Backbone.View<AppModel> {
 
-    template: (data: any) => string;
+    template: (data: ControlsTemplateData) => string;
 
     constructor(options: any) {
       super(options);
@@ -131,7 +139,7 @@ $(function() {
   // A model which stores and manages application data
   class AppModel extends Backbone.Model {
 
-    getSeconds() {
+    getSeconds(): number {
       var pauseTimestamp = this.get('pauseTimestamp');
       var offset = pauseTimestamp || Date.now();
       var timestamp = offset - this.get('timestamp');
@@ -139,7 +147,7 @@ $(function() {
       return Math.floor(timestamp / 1000);
     }
 
-    isPaused() {
+    isPaused(): boolean {
       return !!this.get('pauseTimestamp');
     }
 
