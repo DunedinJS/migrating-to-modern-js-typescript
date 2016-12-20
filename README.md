@@ -1,4 +1,7 @@
-# Migrating to modern JS
+# Migrating to modern JS &mdash; TypeScript
+
+__This is a fork of https://github.com/DunedinJS/migrating-to-modern-js which
+uses TypeScript instead of transpiling modern JavaScript source with Babel.__
 
 A simple stopwatch application which serves as an example of how to migrate an old JavaScript application to modern syntax, features, and technologies.
 
@@ -14,19 +17,20 @@ A simple stopwatch application which serves as an example of how to migrate an o
   Run `node -v` to check your current version.
   [Follow the instructions here to install Node.js](https://github.com/DunedinJS/dunedin-modern-javascript/blob/master/topics/common/nodejs-install.md)
 
-* A text editor with first-class JavaScript support.
+* A text editor with first-class JavaScript and TypeScript support.
 
-  [Atom](https://atom.io/), [VSCode](https://code.visualstudio.com/), and
-[Sublime Text](https://www.sublimetext.com/) are best.
+  [VSCode](https://code.visualstudio.com/) is ready to go.
+  [Atom](https://atom.io/) with the `atom-typescript` package.
+  [Sublime Text](https://www.sublimetext.com/) with the `TypeScript` package.
 
 * A modern web browser with good debugging tools such as Chrome, Firefox, or Edge.
 
 ## Let's begin
 
 1. Clone this repository by running
-`git clone https://github.com/DunedinJS/migrating-to-modern-js.git`
+`git clone https://github.com/DunedinJS/migrating-to-modern-js-typescript.git`
 
-1. `cd ./migrating-to-modern-js`
+1. `cd ./migrating-to-modern-js-typescript`
 
   _If using NVM to manage Node.js versions you can also run `nvm use` here to
   make sure that the correct version is active._
@@ -56,12 +60,13 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 #### [`02-modules`](https://github.com/DunedinJS/migrating-to-modern-js/tree/02-modules)
 
-* Add Webpack and Babel to compile and bundle modular source code into a single browser-ready script
+* Add Webpack and TypeScript to compile and bundle modular source code into a single browser-ready script
+* Add type definitions for third-party libraries
 * Import third-party libraries as modules
 
 #### [`03-modules`](https://github.com/DunedinJS/migrating-to-modern-js/tree/03-modules)
 
-* Separate all source code into ES6 modules
+* Separate all source code into TypeScript modules
 
 #### [`04-sourcemaps`](https://github.com/DunedinJS/migrating-to-modern-js/tree/04-sourcemaps)
 
@@ -78,12 +83,12 @@ Our starting application. Built on Backbone.js and state of the art from late 20
 
 #### [`07-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/07-syntax)
 
-* Add ESLint with Airbnb styleguide rules
+* Add TSLint with styleguide rules
 * Convert source code to modern syntax
 
 #### [`08-syntax`](https://github.com/DunedinJS/migrating-to-modern-js/tree/08-syntax)
 
-* Convert Backbone's custom class extension to ES6 classes
+* Convert Backbone's custom class extension to TypeScript classes
 
 #### [`09-react`](https://github.com/DunedinJS/migrating-to-modern-js/tree/09-react)
 
