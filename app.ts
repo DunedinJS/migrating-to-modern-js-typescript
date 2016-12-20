@@ -136,6 +136,11 @@ $(function() {
 
   }
 
+  interface ModelData {
+    timestamp: number,
+    pauseTimestamp: number
+  }
+
   // A model which stores and manages application data
   class AppModel extends Backbone.Model {
 
@@ -152,7 +157,7 @@ $(function() {
     }
 
     pause() {
-      this.set({
+      this.set(<ModelData>{
         pauseTimestamp: Date.now()
       });
     }
@@ -161,14 +166,14 @@ $(function() {
       var pauseTimestamp = this.get('pauseTimestamp');
       var offset = pauseTimestamp - this.get('timestamp');
 
-      this.set({
+      this.set(<ModelData>{
         timestamp: Date.now() - offset,
         pauseTimestamp: null
       });
     }
 
     reset() {
-      this.set({
+      this.set(<ModelData>{
         timestamp: Date.now(),
         pauseTimestamp: null
       });
