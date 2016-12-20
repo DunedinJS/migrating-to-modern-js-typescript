@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import * as $ from 'jquery';
 
 import AppView from './app/View';
 import AppModel from './app/Model';

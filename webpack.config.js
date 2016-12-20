@@ -1,6 +1,6 @@
 module.exports = {
 
-  entry: './source/index.js',
+  entry: './source',
 
   output: {
     path: './dist', // the directory to output bundled files to
@@ -11,12 +11,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015'],
-        },
+        test: /\.ts?$/,
+        loader: 'ts-loader',
       },
       {
         test: /.html$/,
@@ -25,4 +21,9 @@ module.exports = {
       },
     ],
   },
+  
+  resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.json'],
+  },
+
 };

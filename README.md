@@ -2,10 +2,10 @@ _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
 # 03-modules
 
-* Separate all source code into ES6 modules
+* Separate all source code into TypeScript modules
 
-  The single `app.js` is now split into multiple files within the [`source`](./source/) directory.
-  These use ES6 module import and export.
+  The single `app.ts` is now split into multiple files within the [`source`](./source/) directory.
+  These use TypeScript module import and export.
 
 ## To run
 
@@ -30,13 +30,13 @@ This compiles and bundles the JavaScript source files into `dist/bundle.js`
 ## Template files as modules
 
 _For example see [`source/controls/template.html`](./source/controls/template.html)
-and [`source/controls/View.js`](./source/controls/View.js)._
+and [`source/controls/View.ts`](./source/controls/View.ts)._
 
-Webpack allows non-JavaScript files to be loaded as modules.
+Webpack allows non-JavaScript/TypeScript files to be loaded as modules.
 This is very convenient because it allows us to separate templates into their
 own files and load them into the view modules where needed.
 
 [`raw-loader`](https://github.com/webpack/raw-loader) is used to load the
-contents of text files as strings in JavaScript.
+contents of text files as strings in JavaScript/TypeScript.
 This is done at compile-time so the templates are included as strings in the
 application bundle and do not have to be requested separately.

@@ -1,16 +1,25 @@
-import _ from 'underscore';
-import Backbone from 'backbone';
+import * as _ from 'underscore';
+import * as Backbone from 'backbone';
 
-import template from './template.html';
+import AppModel from './Model';
 import DisplayView from '../display/View';
 import ControlsView from '../controls/View';
 
+import * as template from './template.html';
+
 // The main view for the application
-export default Backbone.View.extend({
+export default class AppView extends Backbone.View<AppModel> {
+  
+  template: (data?: any) => string;
+  displayView: DisplayView;
+  controlsView: ControlsView;
 
-  template: _.template(template),
+  constructor(options: any) {
+    super(options);
+    this.template = _.template(template);
+  }
 
-  render: function() {
+  render() {
     // render the view template
     this.$el.html(this.template());
 
@@ -27,6 +36,8 @@ export default Backbone.View.extend({
     // render child-views
     this.displayView.render();
     this.controlsView.render();
+
+    return this;
   }
 
-});
+}

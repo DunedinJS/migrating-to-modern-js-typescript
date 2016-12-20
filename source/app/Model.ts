@@ -1,27 +1,27 @@
-import Backbone from 'backbone';
+import * as Backbone from 'backbone';
 
 // A model which stores and manages application data
-export default Backbone.Model.extend({
+export default class AppModel extends Backbone.Model {
 
-  getSeconds: function() {
+  getSeconds() {
     var pauseTimestamp = this.get('pauseTimestamp');
     var offset = pauseTimestamp || Date.now();
     var timestamp = offset - this.get('timestamp');
 
     return Math.floor(timestamp / 1000);
-  },
+  }
 
-  isPaused: function() {
+  isPaused() {
     return !!this.get('pauseTimestamp');
-  },
+  }
 
-  pause: function() {
+  pause() {
     this.set({
       pauseTimestamp: Date.now()
     });
-  },
+  }
 
-  continue: function() {
+  continue() {
     var pauseTimestamp = this.get('pauseTimestamp');
     var offset = pauseTimestamp - this.get('timestamp');
 
@@ -29,13 +29,13 @@ export default Backbone.Model.extend({
       timestamp: Date.now() - offset,
       pauseTimestamp: null
     });
-  },
+  }
 
-  reset: function() {
+  reset() {
     this.set({
       timestamp: Date.now(),
       pauseTimestamp: null
     });
   }
 
-});
+}

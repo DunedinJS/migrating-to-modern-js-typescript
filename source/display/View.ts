@@ -1,12 +1,20 @@
-import _ from 'underscore';
-import Backbone from 'backbone';
+import * as _ from 'underscore';
+import * as Backbone from 'backbone';
+
+import AppModel from '../app/Model';
+
 
 // A view which displays the elapsed time in seconds
-export default Backbone.View.extend({
+export default class DisplayView extends Backbone.View<AppModel> {
 
-  template: _.template('<%= seconds %> seconds'),
+  template: (data: any) => string;
 
-  initialize: function() {
+  constructor(options: any) {
+    super(options);
+    this.template = _.template('<%= seconds %> seconds');
+  }
+
+  initialize() {
     // save reference to the correct this context
     var self = this;
 
@@ -19,12 +27,14 @@ export default Backbone.View.extend({
 
     // re-render on model change
     this.listenTo(this.model, 'change', this.render);
-  },
+  }
 
-  render: function() {
+  render() {
     this.$el.html(this.template({
       seconds: this.model.getSeconds()
     }));
+
+    return this;
   }
 
-});
+}
