@@ -1,5 +1,10 @@
 import * as Backbone from 'backbone';
 
+interface ModelData {
+  timestamp: number,
+  pauseTimestamp: number
+}
+
 // A model which stores and manages application data
 export default class AppModel extends Backbone.Model {
 
@@ -16,7 +21,7 @@ export default class AppModel extends Backbone.Model {
   }
 
   pause() {
-    this.set({
+    this.set(<ModelData>{
       pauseTimestamp: Date.now()
     });
   }
@@ -25,14 +30,14 @@ export default class AppModel extends Backbone.Model {
     var pauseTimestamp = this.get('pauseTimestamp');
     var offset = pauseTimestamp - this.get('timestamp');
 
-    this.set({
+    this.set(<ModelData>{
       timestamp: Date.now() - offset,
       pauseTimestamp: null
     });
   }
 
   reset() {
-    this.set({
+    this.set(<ModelData>{
       timestamp: Date.now(),
       pauseTimestamp: null
     });
