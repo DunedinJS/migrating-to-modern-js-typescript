@@ -2,7 +2,7 @@ _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
 
 # 02-modules
 
-* Add Webpack and Babel to compile and bundle modular source code into a
+* Add Webpack and TypeScript to compile and bundle modular source code into a
 single browser-ready script
 
   Only a single `<script>` tag to load the application bundle is in
@@ -12,6 +12,8 @@ single browser-ready script
 
   The application no longer relies on global variables because Webpack makes
   sure that all module dependencies are satisfied.
+
+* Convert `app.js` to TypeScript as [`app.ts`](./app.ts)
 
 ## To run
 
@@ -41,11 +43,12 @@ images, and CSS among others and bundle them into browser-ready files.
 
 Webpack is highly configurable via vast ecosystem of loaders and plugins.
 
-## Babel
+## TypeScript
 
-[Babel](https://babeljs.io/) is a JavaScript compiler which is most often used to
-transpile modern or future JavaScript syntax into older versions.
-For example from ES6/ES2015 source code into ES5 code which has full browser support.
+[TypeScript](http://www.typescriptlang.org/) is a language which is considered as
+a superset of JavaScript. Most importantly it has parity with modern and future
+JavaScript syntax and add strong typing.
+The typed features can help when working on large-scale projects because possible
+errors can be caught during compilation.
+TypeScript is compiled into JavaScript code which has full browser support.
 
-_In this branch we only use Babel to transpile ES6 module import syntax.
-For an example of this see [`app.js`](./app.js)._
