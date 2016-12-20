@@ -19,9 +19,8 @@ A simple stopwatch application which serves as an example of how to migrate an o
 
 * A text editor with first-class JavaScript and TypeScript support.
 
-  [VSCode](https://code.visualstudio.com/) is ready to go.
-  [Atom](https://atom.io/) with the `atom-typescript` package.
-  [Sublime Text](https://www.sublimetext.com/) with the `TypeScript` package.
+  __[VSCode](https://code.visualstudio.com/) strongly recommended because it is
+  ready to go and has the best support for TypeScript.__
 
 * A modern web browser with good debugging tools such as Chrome, Firefox, or Edge.
 
