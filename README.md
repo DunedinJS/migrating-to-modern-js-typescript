@@ -1,4 +1,4 @@
-_[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js)_
+_[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js-typescript)_
 
 # 00-original
 
