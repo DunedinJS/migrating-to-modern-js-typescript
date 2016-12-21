@@ -1,16 +1,16 @@
 _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js-typescript)_
 
-# 03-modules
+# 04-modules
 
 * Separate all source code into TypeScript modules
 
   The single `app.ts` is now split into multiple files within the [`source`](./source/) directory.
-  These use TypeScript module import and export.
+  These use TypeScript module import and export syntax.
 
 ## To run
 
 1. Clone this repository to your workstation
-1. Checkout the `03-modules` branch
+1. Checkout the `04-modules` branch
 1. Run `npm i` in the project directory &mdash; this installs dependencies
 
 #### Development server
@@ -40,3 +40,6 @@ own files and load them into the view modules where needed.
 contents of text files as strings in JavaScript/TypeScript.
 This is done at compile-time so the templates are included as strings in the
 application bundle and do not have to be requested separately.
+
+_Loading a module in this way is not expected by TypeScript so a declaration for
+`*/html` modules has been added in [`source/declarations.d.ts`](./source/declarations.d.ts)_.
