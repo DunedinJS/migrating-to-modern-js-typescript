@@ -1,7 +1,6 @@
 # Migrating to modern JS &mdash; TypeScript
 
-__This is a fork of https://github.com/DunedinJS/migrating-to-modern-js which
-uses TypeScript instead of transpiling modern JavaScript source with Babel.__
+__This is a TypeScript fork of https://github.com/DunedinJS/migrating-to-modern-js__
 
 A simple stopwatch application which serves as an example of how to migrate an old JavaScript application to modern syntax, features, and technologies.
 
