@@ -1,6 +1,6 @@
 _[Back to `master` branch](https://github.com/DunedinJS/migrating-to-modern-js-typescript)_
 
-# 02-modules
+# 02-typescript
 
 * Add Webpack and TypeScript to compile and bundle modular source code into a
 single browser-ready script
@@ -18,7 +18,7 @@ single browser-ready script
 ## To run
 
 1. Clone this repository to your workstation
-1. Checkout the `02-modules` branch
+1. Checkout the `02-typescript` branch
 1. Run `npm i` in the project directory &mdash; this installs dependencies
 
 #### Development server
@@ -54,4 +54,5 @@ errors can be caught during compilation.
 TypeScript is compiled into JavaScript code which has full browser support.
 
 _In this branch we only use TypeScript for its module import syntax but not its
-full typed features. For an example of this see [`app.ts`](./app.ts)._
+full typed features.
+The existing JavaScript in [`app.ts`](./app.ts) remains unchanged._
