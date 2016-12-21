@@ -11,9 +11,14 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.ts?$/,
+        test: /\.ts$/,
         loader: 'ts-loader',
       },
     ],
   },
+
+  resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.ts', '.js', '.json'],
+  },
+
 };
